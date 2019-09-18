@@ -47,9 +47,9 @@
               
               
               <div class="icons">
-                  <div><i class="fab fa-facebook-f"></i></div>
-                  <div><i class="fab fa-google"></i></div>
-                  <div><i class="fab fa-twitter"></i></div>
+                  <div><a href="https://web.facebook.com"><i class="fab fa-facebook-f"></i></a></div>
+                  <div><a href="https://mail.google.com"><i class="fab fa-google"></i></a></div>
+                  <div><a href="https://twitter.com"><i class="fab fa-twitter"></i></a></div>
               </div>
             </form>
             
