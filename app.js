@@ -35,17 +35,29 @@ $("#signupform").submit(function(event){
         data: datatopost,
         success: function(data){
             if(data){
-                if(data)
-            $(".messagebox").html(data);
-            $(".messagebox").fadeIn(1000);
-                setTimeout(function(){$(".messagebox").fadeOut(1000);},3000);
+                
+               
+                if(data !== "success"){ //If the signup.php returns a messge for the user 
+                    
+                    $(".messagebox").html(data);
+                    $(".messagebox").fadeIn(1000);
+                    setTimeout(function(){$(".messagebox").fadeOut(1000);},3000);
+                }else{
+                    $(".messagebox").html("<span>Congratulations!!! You have successfully signed up</span>");
+                    $(".messagebox").fadeIn(1000);
+                    setTimeout(function(){location.reload();},6000);
+                }
+           
                 
             }
             
         },
         
         error: function(){
-            $("#signupmessage").html("There was an error with the ajax call, please try again later");
+           $(".messagebox").html("There was an error with the ajax call, please try again later.");
+
+            $(".messagebox").fadeIn(1000);
+            setTimeout(function(){$(".messagebox").fadeOut(1000);},3000);
         },
         
     });
@@ -63,6 +75,7 @@ $("#signupform").submit(function(event){
 $("#loginform").submit(function(event){
         //Prevent default php processing
     event.preventDefault();
+    
         //Collect user inputs
     var datatopost = $(this).serializeArray();
     console.log(datatopost);
@@ -73,16 +86,26 @@ $("#loginform").submit(function(event){
         data: datatopost,
         success: function(data){
            if(data){
-                
+               
+                if((data.search("success")) == -1){
+                    //if the login is unsuccessful from the backend output msg
             $(".messagebox").html(data);
             $(".messagebox").fadeIn(1000);
                 setTimeout(function(){$(".messagebox").fadeOut(1000);},3000);
-                
+                }else{
+                    // Login was successful
+                    $(".messagebox").html("WELCOME!! "+data.slice(7).toUpperCase());
+            $(".messagebox").fadeIn(1000);
+                setTimeout(function(){$(".messagebox").fadeOut(1000);},10000);
+                }
             }
         },
         
         error: function(){
-            $("loginmessage").html("There was an error with the ajax call, please try again later.");
+            $(".messagebox").html("There was an error with the ajax call, please try again later.");
+            
+             $(".messagebox").fadeIn(1000);
+                setTimeout(function(){$(".messagebox").fadeOut(1000);},3000);
         },
         
     });

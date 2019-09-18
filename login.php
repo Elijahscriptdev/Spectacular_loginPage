@@ -49,14 +49,14 @@ if($errors){
         $db = $arr_data["users"];
 
         if(!userIsPresent($arr_data, $email)){
-            echo "<span>The email is not registered<br/> please click signup to register<span>";
+            echo "<span>The email is not registered<br/> please click on signup to register<span>";
             exit;
         }
 
         //Check if combination of email and password is correct
         foreach($arr_data["users"] as $item ){
             if($item["email"] === $email and $item["password"] === $password){
-                echo"<span>success</span>";
+                echo"success".$item["username"];
                 exit;
             }
         }

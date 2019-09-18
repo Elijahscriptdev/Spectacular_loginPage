@@ -34,7 +34,7 @@
               <div class="line"></div>
                   <span id="loginmessage"></span>
          
-              <input type="email" placeholder="Enter email or username" class="username"  name="loginemail">
+              <input type="email" placeholder="Enter email" class="username"  name="loginemail">
               <input type="password" placeholder="Enter password" class="password" name="loginpassword">
               <button type="submit" name="submit">Sign in</button>
               
