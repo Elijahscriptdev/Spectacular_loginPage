@@ -366,15 +366,17 @@ li:hover {
 .messagebox{
     background-color: rgba(74, 179, 177, 90%);
     border-radius: 15px;
-    display:;
+    display:none;
     width: 60%;
     margin: auto;
     text-align: center;
-    height:  200px;
+    height:  auto;
     position:fixed;
     z-index: 1;
     margin-left: 20%;
-    top: 100px;
+    top: 50px;
+    color: white;
+    padding: 40px 0px;
 }
 .messagebox button{
     position: relative;

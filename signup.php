@@ -4,14 +4,14 @@
 
 
 //    <!--Define error messages-->
-$missingUsername = '<span>Please fill in a userame</span>';
-$invalidUsername = '<span>Username must be at least 4 characters</span>';
-$missingEmail = '<span>Please fill in your email address</span>';
-$invalidEmail = '<span>Invalid email address! Please enter a valid email</span>';
-$missingPassword = '<span>Please fill in your password</span>';
-$invalidPassword = '<span>password must be at least 4 characters!</span>';
-$differentPassword = '<span>Passwords don\'t match</span>';
-$missingPassword2 = '<span>Please confirm your password</span>';
+$missingUsername = '<span>please fill in a userame</span><br/>';
+$invalidUsername = '<span>username should be at least 4 characters</span><br/>';
+$missingEmail = '<span>please fill in your email address</span><br/>';
+$invalidEmail = '<span>please enter a valid email</span><br/>';
+$missingPassword = '<span>please fill in your password</span><br/>';
+$invalidPassword = '<span>password should be at least 4 characters!</span><br/>';
+$differentPassword = '<span>Passwords don\'t match</span><br/>';
+$missingPassword2 = '<span>confirm password</span><br/>';
 
 $errors = "";
 $username = "";
@@ -105,7 +105,7 @@ $password  = hash('sha256', $password);
                 exit;
             }
             if($item["username"] === $username){
-                echo "<span>$username is already taken! please use another username</span>";
+                echo "<span>$username is already taken! please use another username</span><br/>";
                     exit;
             }
         }
@@ -116,8 +116,8 @@ $password  = hash('sha256', $password);
 		$jsondata = json_encode($arr_data, JSON_PRETTY_PRINT);
 		//write json data into data.json file
 		if (file_put_contents($myFile, $jsondata)) {
-			echo "You have successfully signed up";
-            echo "<script>location.reload()</script>";
+			echo "success";
+            exit;
             
 		}
 

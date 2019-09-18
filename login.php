@@ -4,8 +4,8 @@
 session_start();
 
 //    Define error messages
-$missingEmail = '<span>Please enter your email</span><br/>';
-$missingPassword = '<span>Please enter your password</span><br/>';
+$missingEmail = '<span>please enter your email</span><br/>';
+$missingPassword = '<span>please enter your password</span><br/>';
 $errors = "";
 $myFile ="db.json";
 $email = "";
@@ -56,12 +56,12 @@ if($errors){
         //Check if combination of email and password is correct
         foreach($arr_data["users"] as $item ){
             if($item["email"] === $email and $item["password"] === $password){
-                echo"<span>success... welcome ".$item["username"] ."</span>";
+                echo"<span>success</span>";
                 exit;
             }
         }
 
-        echo "<span>Wrong password... try again</span>";
+        echo "<span>incorrect password</span>";
         
 
         //Function to check if username is present in the database

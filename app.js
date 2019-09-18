@@ -35,7 +35,11 @@ $("#signupform").submit(function(event){
         data: datatopost,
         success: function(data){
             if(data){
-            $("#signupmessage").html(data);
+                if(data)
+            $(".messagebox").html(data);
+            $(".messagebox").fadeIn(1000);
+                setTimeout(function(){$(".messagebox").fadeOut(1000);},3000);
+                
             }
             
         },
@@ -68,14 +72,13 @@ $("#loginform").submit(function(event){
         type: "POST",
         data: datatopost,
         success: function(data){
-            if(data == "success"){
-            $("#loginmessage").html(data);
-                window.location = "mainpageloggedin.php";
-            }else{
+           if(data){
                 
-                $("#loginmessage").html(data);
+            $(".messagebox").html(data);
+            $(".messagebox").fadeIn(1000);
+                setTimeout(function(){$(".messagebox").fadeOut(1000);},3000);
+                
             }
-            
         },
         
         error: function(){
