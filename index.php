@@ -35,7 +35,7 @@
               <div class="line"></div>
                   <span id="loginmessage"></span>
          
-              <input type="email" placeholder="Enter email" class="username"  name="loginemail">
+              <input type="text" placeholder="Enter email" class="username"  name="loginemail">
               <input type="password" placeholder="Enter password" class="password" name="loginpassword">
               <button type="submit" name="submit">Sign in</button>
               
@@ -59,7 +59,7 @@
               <p>Sign up today earn rewards and special member promotion</p>
                 <span id="signupmessage"></span>
              <input type="text" placeholder="Enter username" class="name" id="name" name="username">
-              <input type="email" placeholder="Enter Email" class="email" id="email" name="email">
+              <input type="text" placeholder="Enter Email" class="email" id="email" name="email">
               <input type="password" placeholder="Enter Password" class="newpassword" id="password" name="password"> 
               <input type="password" placeholder="Confirm Password" class="comfirm-pass" id="confirmPassword" name="password2">
               <button class="add" type="submit" name="signup">Sign up</button>
